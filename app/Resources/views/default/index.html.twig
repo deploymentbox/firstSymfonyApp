@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set classes = ["active", "success", "warning", "danger", "info"] %}
+    <h1>Symfony App</h1>
+    <h2>List of Customers</h2>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+    {% for customer in customers %}
+    <tr class="{{ classes[loop.index % 5] }}">
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.address }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <img src="{{ asset('bundles/app/images/hostingcrab-logo.png') }}" alt="Hostingcrab.com"/>
+            </div>
+            <div>by <a href="http://www.hostingcrab.com">HostingCrab.com</a></div>
+        </div>
+    </footer>
+{% endblock %}
