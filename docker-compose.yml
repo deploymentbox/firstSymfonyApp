@@ -2,7 +2,6 @@ application:
   image: symfony/code
   volumes:
     - .:/var/www/symfony
-    - app/logs/symfony:/var/www/symfony/app/logs
   tty: true
 
 db:
